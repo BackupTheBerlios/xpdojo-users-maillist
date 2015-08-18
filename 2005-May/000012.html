@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Xpdojo-users] the enoent bug
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xpdojo-users/2005-May/index.html" >
+   <LINK REL="made" HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%20the%20enoent%20bug&In-Reply-To=%3C42926DAC.5060100%40club-internet.fr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000018.html">
+   <LINK REL="Next"  HREF="000013.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Xpdojo-users] the enoent bug</H1>
+    <B>Christophe Thibaut</B> 
+    <A HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%20the%20enoent%20bug&In-Reply-To=%3C42926DAC.5060100%40club-internet.fr%3E"
+       TITLE="[Xpdojo-users] the enoent bug">christophe-thibaut at club-internet.fr
+       </A><BR>
+    <I>Tue May 24 01:56:28 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000018.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+        <LI>Next message: <A HREF="000013.html">[Xpdojo-users] the enoent bug
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12">[ date ]</a>
+              <a href="thread.html#12">[ thread ]</a>
+              <a href="subject.html#12">[ subject ]</a>
+              <a href="author.html#12">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi xpdojo developers,
+
+I made some investigation about the enoent error occurring with emacs on 
+linux and I wrote a manual test, and a unit test (sort of). I even tried 
+a fix that seemed to work for me, but which couldn't by all means 
+qualify as a definitive solution.
+
+* Symptom :
+With emacs on linux, in a given directory, edit a new file :
+-module(bug_enoent).
+-export([foo/0]).
+
+foo() -&gt;
+      ok.
+then save it, then edit it again and don't save it.
+In the same directory, launch an erl session
+type xpdojo:test_files(&quot;.&quot;).
+expected : [{acceptance,0,0},{unit,0,0},{modules,1,1}]
+obtained : ** exited: {{badmatch,{error,enoent}}, [{adlib,xray,4}, etc..
+
+* Significance :
+The enoent exception abruptly stops the xpdojo compile &amp; test process, 
+so xpdojo is much less useful when using emacs as an editor on Linux 
+platform, and especially the testing_server feature.
+
+* Origin :
+Whenever emacs enters in a mode in wich a file is currently edited but 
+not saved yet, emacs creates a special symbolic link corresponding to 
+the file. (why emacs behaves like that could be an interesting subject, 
+but I didn't want to dive into it immediately).
+
+xpdojo, when triggered, scans the given directory for modified source 
+files to compile and tests to execute. Troubles come when the special 
+link is encountered : the xray/4 function, in an attempt to collect file 
+information about the files in the directory, stops with an enoent 
+exception on evaluation of file:read_file_info(filename:join(Root,Item), 
+just when the given Item refers to the emacs special symbolic link.
+
+* Evidence :
+Suppose we have edited but not saved bug_enoent.erl. We are under erl :
+ &gt; ls().
+#bug_enoent.erl#     .#bug_enoent.erl     bug_enoent.beam
+bug_enoent.erl       bug_enoent.erl~
+
+The 2nd file is the special link. Although we have no problem reading
+the currently edited file :
+
+ &gt; file:read_file_info(&quot;bug_enoent.erl&quot;).
+{ok,{file_info,59, regular,  read_write,  {{2005,5,23},{23,14,40}}, 
+{{2005,5,23},{23,15,33}}, {{2005,5,23},{23,15,33}}, 33188, 1, 774, 0, 
+1305052, 501, 501}}
+
+We have a problem reading file info on the link :
+ &gt; file:read_file_info(&quot;.#bug_enoent.erl&quot;).
+{error,enoent}
+
+If we read /link/ info instead, we don't have get an error :
+ &gt; file:read_link_info(&quot;.#bug_enoent.erl&quot;).
+{ok,{file_info,31, symlink, none, {{2005,5,23},{23,18,52}}, 
+{{2005,5,23},{23,18,52}}, {{2005,5,23},{23,18,52}}, 41471, 1, 774, 
+0,1305051, 501, 501}}
+
+* Automated test :
+In the attached file bug_enoent_ut.erl is a test related to the problem. 
+This test creates a directory from the parent directory, not a subdir, 
+in order to have test_files() working properly. Not to try this directly 
+from your home directory !
+ 
+* Solution ?
+file:read_link_info/2 reads information about any link, including 
+symbolic links, while read_file_info reads only about files. Maybe if 
+xray could use read_link_info instead of read_file_info, the pattern 
+{_,_,symlink} could be used to filter out symlinks from the list xray is 
+collecting info about, so that it would work no further with the symlink 
+and would skip to the next file in the list ?
+
+* Shameless Hack
+
+First, I runned xpdojo:test_files(&quot;.&quot;) on my xpdojo/src original dir and 
+got {unit, 88, 84}. There's something wrong with my platform, or with my 
+testing. Anyway, I was too curious to give up so I tried this :
+
+in adlib.erl, line # 200 replace
+{ok,File_info} = file:read_file_info(filename:join(Root,Item)),
+with
+{ok,File_info} = file:read_link_info(filename:join(Root,Item)),
+
+runned the tests again, and still got {unit,88,84}, but bug_enoent_ut 
+now pass. I tried an xpdojo session emacs and the testing_server, and as 
+far as I can tell, xpdojo and emacs now agree on what to compile and 
+what to test.
+
+* Conclusion :
+It seems on the surface that we may work around emacs special habits of 
+creating symlinks for currently edited files. On my linux station these 
+symlinks are no longer stopping me from using xpdojo as far as I can 
+tell. I'm quite content with this partial result, as I worried having to 
+abandon emacs for my coding in Erlang.
+
+I'm still quite annoyed by the fact that I didn't have all unit tests 
+passing for xpdojo. I didn't try to understand why (and I didn't 
+remember Dominic's explanations about xpdojo ability to test itself, and 
+the way it should do this), and I tried this without really 
+understanding what would happened if xray collected symlinks info just 
+as it collect file info. What is to be done with a symlink ?
+
+Anyway I just send these informations, as a track for you to explore the 
+problem further, and of course I leave it to you developers to design a 
+complete fix to this problem.
+
+Thanks for your attention.
+Regards --ct
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000018.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+	<LI>Next message: <A HREF="000013.html">[Xpdojo-users] the enoent bug
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12">[ date ]</a>
+              <a href="thread.html#12">[ thread ]</a>
+              <a href="subject.html#12">[ subject ]</a>
+              <a href="author.html#12">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xpdojo-users">More information about the Xpdojo-users
+mailing list</a><br>
+</body></html>

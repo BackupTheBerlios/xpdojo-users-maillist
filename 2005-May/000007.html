@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Xpdojo-users] 2 Users Stories
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xpdojo-users/2005-May/index.html" >
+   <LINK REL="made" HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%202%20Users%20Stories&In-Reply-To=%3C42891757.4050506%40club-internet.fr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000006.html">
+   <LINK REL="Next"  HREF="000008.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Xpdojo-users] 2 Users Stories</H1>
+    <B>Christophe Thibaut</B> 
+    <A HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%202%20Users%20Stories&In-Reply-To=%3C42891757.4050506%40club-internet.fr%3E"
+       TITLE="[Xpdojo-users] 2 Users Stories">christophe-thibaut at club-internet.fr
+       </A><BR>
+    <I>Mon May 16 23:57:43 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000006.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+        <LI>Next message: <A HREF="000008.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Christophe Thibaut a &#233;crit:
+
+&gt;<i> Nicolas Charpentier a &#233;crit:
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> Starting a programming session, just before editing source files, I
+</I>&gt;&gt;&gt;<i> launch a status report shell as a background task. Whenever I save a
+</I>&gt;&gt;&gt;<i> source file during the session, the file is compiled, unit and
+</I>&gt;&gt;&gt;<i> acceptance tests are executed and a report is displayed in the report
+</I>&gt;&gt;&gt;<i> shell.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> In answer to your first request, look at our testing_server. it's a 
+</I>&gt;&gt;<i> simple &quot;continuously_testing&quot; server. To use it, you only have to 
+</I>&gt;&gt;<i> start the server using:
+</I>&gt;&gt;<i> testing_server:start(Directory,NotificationFun, Options).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The NotificationFun will be called each time tests need to be run.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> It works ! Only I should give it a notification function smarter than
+</I>&gt;<i>  fun(Msg) -&gt; io:format(&quot;~w&quot;, [Msg])
+</I>&gt;<i> because with this I have my erl shell continuously displaying the same 
+</I>&gt;<i> errors. A smarter function would not print Msg again if the tests 
+</I>&gt;<i> results are unchanged. I'll try to do that. 
+</I>
+In fact only compile errors are displayed again and again, while 
+reporting the same broken tests doesn't trigger the notification 
+function again. Is it deliberately wanted behaviour ?
+
+BTW, I did run the whole thing under emacs, splitting windows between 
+code, tests and the Erlang shell, and there it was : my first experiment 
+with an IDE offering parallel background validation ! Now you can twidle 
+with a small piece of code, and somewhere on the same screen, a status 
+line change from {unit,11,10} to {unit,11,11} just as if it was syntax 
+highlighting. Isn't it a Great Day or what? Well maybe I'm just too 
+solemn about it. ( I work in a place where the delay between editing and 
+testing code is generally stated in months :-)
+
+Regards --ct
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000006.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+	<LI>Next message: <A HREF="000008.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xpdojo-users">More information about the Xpdojo-users
+mailing list</a><br>
+</body></html>

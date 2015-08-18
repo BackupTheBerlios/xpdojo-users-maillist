@@ -1,0 +1,1388 @@
+From berlios_lists at dominicwilliams.net  Sun May 15 16:40:17 2005
+From: berlios_lists at dominicwilliams.net (Dominic Williams)
+Date: Sun, 15 May 2005 16:40:17 +0200
+Subject: [Xpdojo-users] Testing the list
+In-Reply-To: <42851287.4090908@free.fr>
+References: <42851287.4090908@free.fr>
+Message-ID: <42875F51.6020601@dominicwilliams.net>
+
+Just testing whether the list works...
+
+
+From ncharpentier at free.fr  Sun May 15 17:08:50 2005
+From: ncharpentier at free.fr (Nicolas Charpentier)
+Date: Sun, 15 May 2005 17:08:50 +0200
+Subject: [Xpdojo-users] Testing the list
+In-Reply-To: <42875F51.6020601@dominicwilliams.net>
+References: <42851287.4090908@free.fr> <42875F51.6020601@dominicwilliams.net>
+Message-ID: <42876602.1020704@free.fr>
+
+Dominic Williams wrote:
+> Just testing whether the list works...
+> _______________________________________________
+
+Yes it does
+
+:-)
+
+
+
+From jack at 2ia.net  Sun May 15 20:41:23 2005
+From: jack at 2ia.net (Jack)
+Date: Sun, 15 May 2005 20:41:23 +0200
+Subject: [Xpdojo-users] Testing the list
+In-Reply-To: <42876602.1020704@free.fr>
+Message-ID: <PFEEJMJCOABMJBCCOABAKECHCDAA.jack@2ia.net>
+
+Je me sens de moins en moins seul ;o)
+
+
+-----Message d'origine-----
+De : xpdojo-users-admin at berlios.de
+[mailto:xpdojo-users-admin at berlios.de]De la part de Nicolas Charpentier
+Envoy? : dimanche 15 mai 2005 17:09
+? : xpdojo-users at berlios.de
+Objet : Re: [Xpdojo-users] Testing the list
+
+
+Dominic Williams wrote:
+> Just testing whether the list works...
+> _______________________________________________
+
+Yes it does
+
+:-)
+
+_______________________________________________
+Xpdojo-users mailing list
+Xpdojo-users at lists.berlios.de
+http://lists.berlios.de/mailman/listinfo/xpdojo-users
+
+
+
+From cthibaut at club-internet.fr  Mon May 16 00:17:47 2005
+From: cthibaut at club-internet.fr (Christophe Thibaut)
+Date: Mon, 16 May 2005 00:17:47 +0200
+Subject: [Xpdojo-users] Testing 1,2,3
+Message-ID: <4287CA8B.6080305@club-internet.fr>
+
+Just testing my mail access to the list..
+
+
+
+
+From christophe-thibaut at club-internet.fr  Mon May 16 00:25:11 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Mon, 16 May 2005 00:25:11 +0200
+Subject: [Xpdojo-users] 2 Users Stories
+Message-ID: <4287CC47.2050509@club-internet.fr>
+
+Ok, now the list seems to work (or I seem to be able using it)..
+
+Hello XpDojo Developers,
+
+I've been using xpdojo for more than 3 weeks now. It's a very 
+interesting experience. My programming activities in Erlang were already 
+following a relatively easy process :
+- editing then saving code with emacs
+- launching compilation with make:all() (or hitting twice the up arrow 
+key within command history) on erl
+- executing tests on erl (idem)
+
+and now it's simpler :
+- editing then saving code with emacs
+- launch xpdojo:test_fuiles(".") (or one up arrow key)
+
+and I think it will be even simpler when I can merely save my files in 
+the editor and just have a look at the tests results in erl, having the 
+tests automatically executed when I save the source code.
+
+As an Erlang beginner, and writing code for TDD/Erlang beginners, I find 
+it particulary interesting that the process of compiling, finding and 
+executing the test functions need not to be known and seen, making work 
+faster, in a more flexible way, and setting up the developer early in a 
+minimal methodologic frame (code, unit tests, acceptance tests). What I 
+mean is this : when I learned how to program in C, all I needed was an 
+editor, a compiler and a linker. I could just start, printf("hello 
+world") and that was that. Regarding the methodology howtos, there was 
+absolutely nothing in these tools that could guide me through an even 
+minimal validation process (how will I state my intentions, how will I 
+know the program is valid, etc.) With xpdojo, right from the start, when 
+typing my first program in Erlang, I'm invited to write an acceptance 
+test, then write an unit test and then start the coding cycle. It like 
+it because while it's a real "anti-hacking" (or fiddling) strategy wired 
+in the tool, it doesn't impose a great burden on the apprentice. 
+Remember the introductory sermon about software quality you have to bear 
+in *any* text about Ada language ? It's like they'd say : you can learn 
+how to create correct sentences in Ada, but there's much more to it. 
+Here, there's nothing to it : you can learn some Erlang, and at the same 
+time you can write your first tests.
+
+In answer, Dominic, to your invitation to participate in xpdojo as an XP 
+customer (sort of, since I certainly won't pretend to set up "business 
+priorities" of course), I submit the following two users stories. The 
+first one describes the supplementary level of confort I'd like to have 
+as an xpdojo user. I tried to hack an auto report process with 
+testing_server, but I'll leave it to you, finally, I think I'm not yet 
+that good ;-). I might be wrong, but I think a lot of the code written 
+in xpdojo as of today just answers to this user story.
+
+The 2d story allows one to choose other name conventions for test 
+modules and test functions, different from the default set up in 
+xpdojo.erl, and allows doing this from the outset of the project, i.e. 
+without having to explicitely provide theses options in Erlang code :
+   [{unit_modules_filter, adlib:ends_with("ut")},
+     {unit_functions_filter, adlib:ends_with("test")} ...]
+
+My intention is to create soon some acceptance tests for these two 
+stories; of course before that I'm willing to revise them according to 
+our discussions. Feedback welcome !
+
+Regards
+Christophe Thibaut.
+
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: continuously_testing.txt
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050516/97ab98f1/attachment.txt>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: project_options.txt
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050516/97ab98f1/attachment-0001.txt>
+
+From ncharpentier at free.fr  Mon May 16 00:51:49 2005
+From: ncharpentier at free.fr (Nicolas Charpentier)
+Date: Mon, 16 May 2005 00:51:49 +0200
+Subject: [Xpdojo-users] 2 Users Stories
+In-Reply-To: <4287CC47.2050509@club-internet.fr>
+References: <4287CC47.2050509@club-internet.fr>
+Message-ID: <4287D285.4070509@free.fr>
+
+Christophe Thibaut wrote:
+ > .....
+
+Hi Christophe,
+
+Thanks for your support.
+
+
+> ------------------------------------------------------------------------
+> 
+> Starting a programming session, just before editing source files, I
+> launch a status report shell as a background task. Whenever I save a
+> source file during the session, the file is compiled, unit and
+> acceptance tests are executed and a report is displayed in the report
+> shell. 
+> 
+
+In answer to your first request, look at our testing_server. it's a 
+simple "continuously_testing" server. To use it, you only have to start 
+the server using:
+testing_server:start(Directory,NotificationFun, Options).
+
+The NotificationFun will be called each time tests need to be run.
+
+
+Have fun,
+
+Regards,
+Nicolas
+
+
+
+From christophe-thibaut at club-internet.fr  Mon May 16 09:13:30 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Mon, 16 May 2005 09:13:30 +0200
+Subject: [Xpdojo-users] 2 Users Stories
+References: <4287CC47.2050509@club-internet.fr> <4287D285.4070509@free.fr>
+Message-ID: <4288481A.6060805@club-internet.fr>
+
+Nicolas Charpentier a ?crit:
+
+>> Starting a programming session, just before editing source files, I
+>> launch a status report shell as a background task. Whenever I save a
+>> source file during the session, the file is compiled, unit and
+>> acceptance tests are executed and a report is displayed in the report
+>> shell.
+>
+>
+> In answer to your first request, look at our testing_server. it's a 
+> simple "continuously_testing" server. To use it, you only have to 
+> start the server using:
+> testing_server:start(Directory,NotificationFun, Options).
+>
+> The NotificationFun will be called each time tests need to be run.
+
+It works ! Only I should give it a notification function smarter than
+  fun(Msg) -> io:format("~w", [Msg])
+because with this I have my erl shell continuously displaying the same 
+errors. A smarter function would not print Msg again if the tests 
+results are unchanged. I'll try to do that.
+
+Thanks for /your/ support
+Regards,
+Christophe.
+
+
+
+
+From christophe-thibaut at club-internet.fr  Mon May 16 23:57:43 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Mon, 16 May 2005 23:57:43 +0200
+Subject: [Xpdojo-users] 2 Users Stories
+References: <4287CC47.2050509@club-internet.fr> <4287D285.4070509@free.fr> <4288481A.6060805@club-internet.fr>
+Message-ID: <42891757.4050506@club-internet.fr>
+
+Christophe Thibaut a ?crit:
+
+> Nicolas Charpentier a ?crit:
+>
+>>> Starting a programming session, just before editing source files, I
+>>> launch a status report shell as a background task. Whenever I save a
+>>> source file during the session, the file is compiled, unit and
+>>> acceptance tests are executed and a report is displayed in the report
+>>> shell.
+>>
+>>
+>>
+>> In answer to your first request, look at our testing_server. it's a 
+>> simple "continuously_testing" server. To use it, you only have to 
+>> start the server using:
+>> testing_server:start(Directory,NotificationFun, Options).
+>>
+>> The NotificationFun will be called each time tests need to be run.
+>
+>
+> It works ! Only I should give it a notification function smarter than
+>  fun(Msg) -> io:format("~w", [Msg])
+> because with this I have my erl shell continuously displaying the same 
+> errors. A smarter function would not print Msg again if the tests 
+> results are unchanged. I'll try to do that. 
+
+In fact only compile errors are displayed again and again, while 
+reporting the same broken tests doesn't trigger the notification 
+function again. Is it deliberately wanted behaviour ?
+
+BTW, I did run the whole thing under emacs, splitting windows between 
+code, tests and the Erlang shell, and there it was : my first experiment 
+with an IDE offering parallel background validation ! Now you can twidle 
+with a small piece of code, and somewhere on the same screen, a status 
+line change from {unit,11,10} to {unit,11,11} just as if it was syntax 
+highlighting. Isn't it a Great Day or what? Well maybe I'm just too 
+solemn about it. ( I work in a place where the delay between editing and 
+testing code is generally stated in months :-)
+
+Regards --ct
+
+
+
+
+From berlios_lists at dominicwilliams.net  Wed May 18 10:24:02 2005
+From: berlios_lists at dominicwilliams.net (Dominic Williams)
+Date: Wed, 18 May 2005 10:24:02 +0200
+Subject: [Xpdojo-users] 2 Users Stories
+In-Reply-To: <42891757.4050506@club-internet.fr>
+References: <4287CC47.2050509@club-internet.fr> <4287D285.4070509@free.fr> <4288481A.6060805@club-internet.fr> <42891757.4050506@club-internet.fr>
+Message-ID: <428AFBA2.2020706@dominicwilliams.net>
+
+Christophe Thibaut wrote:
+
+ >> It works ! Only I should give it a notification function
+ >> smarter than
+ >>  fun(Msg) -> io:format("~w", [Msg])
+ >> because with this I have my erl shell continuously
+ >> displaying the same errors. A smarter function would not
+ >> print Msg again if the tests results are unchanged. I'll
+ >> try to do that.
+ >
+ > In fact only compile errors are displayed again and again,
+ > while reporting the same broken tests doesn't trigger the
+ > notification function again. Is it deliberately wanted
+ > behaviour ?
+
+Ah, OK, I understand now. I was wondering why you first said
+the same errors are continuously displayed, because that is
+not supposed to happen. However, if you have compile errors,
+I understand. It's not actually deliberate, but at least I
+know why!
+
+It all boils down to how xpdojo:test_files/2 computes the
+'unchanged' state: by comparing the list and age of loaded
+modules with the list and age of source code. It also so
+happens that a module is purged from the code loader just
+/before/ compilation, so when a compilation fails, the new
+version can't be loaded, but the old one is lost! So xpdojo
+thinks that the source tree has a new module, and doesn't
+consider the tree 'unchanged'.
+
+I'd say that's a bug, because test_files/2 should really
+return unchanged. I'll add it to the TODO.
+
+ > BTW, I did run the whole thing under emacs, splitting
+ > windows between code, tests and the Erlang shell, and
+ > there it was : my first experiment with an IDE offering
+ > parallel background validation ! Now you can twidle with a
+ > small piece of code, and somewhere on the same screen, a
+ > status line change from {unit,11,10} to {unit,11,11} just
+ > as if it was syntax highlighting. Isn't it a Great Day or
+ > what? Well maybe I'm just too solemn about it. ( I work in
+ > a place where the delay between editing and testing code
+ > is generally stated in months :-)
+
+That's cool. You know, you're the first one to benefit from
+it, because at the moment, although the continuous server
+works for other projects, we can't use it on XP Dojo itself
+:(
+
+Cheers,
+
+Dominic.
+
+
+
+From christophe-thibaut at club-internet.fr  Fri May 20 22:14:45 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Fri, 20 May 2005 22:14:45 +0200
+Subject: [Xpdojo-users] 2 Users Stories
+References: <4287CC47.2050509@club-internet.fr> <4287D285.4070509@free.fr> <4288481A.6060805@club-internet.fr> <42891757.4050506@club-internet.fr> <428AFBA2.2020706@dominicwilliams.net>
+Message-ID: <428E4535.8090108@club-internet.fr>
+
+Dominic Williams a ?crit:
+
+> Christophe Thibaut wrote:
+>
+> >> It works ! Only I should give it a notification function
+> >> smarter than
+> >>  fun(Msg) -> io:format("~w", [Msg])
+> >> because with this I have my erl shell continuously
+> >> displaying the same errors. A smarter function would not
+> >> print Msg again if the tests results are unchanged. I'll
+> >> try to do that.
+> >
+> > In fact only compile errors are displayed again and again,
+> > while reporting the same broken tests doesn't trigger the
+> > notification function again. Is it deliberately wanted
+> > behaviour ?
+>
+> Ah, OK, I understand now. I was wondering why you first said
+> the same errors are continuously displayed, because that is
+> not supposed to happen. However, if you have compile errors,
+> I understand. It's not actually deliberate, but at least I
+> know why!
+>
+> It all boils down to how xpdojo:test_files/2 computes the
+> 'unchanged' state: by comparing the list and age of loaded
+> modules with the list and age of source code. It also so
+> happens that a module is purged from the code loader just
+> /before/ compilation, so when a compilation fails, the new
+> version can't be loaded, but the old one is lost! So xpdojo
+> thinks that the source tree has a new module, and doesn't
+> consider the tree 'unchanged'.
+>
+> I'd say that's a bug, because test_files/2 should really
+> return unchanged. I'll add it to the TODO. 
+
+Thank you, Dominic.
+
+Talking about file loading, I think I've mentioned it when we met but I 
+put the subject on the list, FWIW : the enoent error on unsaved emacs 
+files stops me from using the stratagem I labeled 'parallel background 
+validation', on Linux. I wonder if the same happens with, say, a C 
+program trying to open an unsaved emacs file. Anyway I'll try to look 
+closer at this problem, and write a test for it if I can.
+
+On another subject : I just read extreme_version_control.txt and I found 
+the idea really amazing ! Can you point me to theoretical material on 
+the subject of undoable logical edits of code ? Thanks in advance.
+
+Regards
+Christophe
+
+
+
+
+From berlios_lists at dominicwilliams.net  Sat May 21 15:42:46 2005
+From: berlios_lists at dominicwilliams.net (Dominic Williams)
+Date: Sat, 21 May 2005 15:42:46 +0200
+Subject: [Xpdojo-users] One bug + ideas on version control
+In-Reply-To: <428E4535.8090108@club-internet.fr>
+References: <4287CC47.2050509@club-internet.fr> <4287D285.4070509@free.fr> <4288481A.6060805@club-internet.fr> <42891757.4050506@club-internet.fr> <428AFBA2.2020706@dominicwilliams.net> <428E4535.8090108@club-internet.fr>
+Message-ID: <428F3AD6.3000208@dominicwilliams.net>
+
+Hi Christophe,
+
+> Talking about file loading, I think I've mentioned it 
+> when we met but I put the subject on the list, FWIW : the
+>  enoent error on unsaved emacs files stops me from using 
+> the stratagem I labeled 'parallel background validation',
+>  on Linux. I wonder if the same happens with, say, a C 
+> program trying to open an unsaved emacs file. Anyway I'll
+>  try to look closer at this problem, and write a test for
+>  it if I can.
+
+Yes, that bug's in the TODO list, but I've taken note that
+it's, uhm, bugging you, and fix it soon.
+
+If you post an acceptance test for the bug we'll use it with
+pleasure (the test, not the bug ;-)
+
+> On another subject : I just read 
+> extreme_version_control.txt and I found the idea really 
+> amazing ! Can you point me to theoretical material on the
+>  subject of undoable logical edits of code ? Thanks in 
+> advance.
+
+It's really the other way round: if you or anyone can find 
+some theoretical support for my wild ideas, I'd be 
+delighted! I'd be surprised if no-one has ever at least done 
+a Ph.D thesis on the subject.
+
+Cheers,
+
+Dominic.
+
+
+From christophe-thibaut at club-internet.fr  Sat May 21 17:02:11 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Sat, 21 May 2005 17:02:11 +0200
+Subject: [Xpdojo-users] One bug + ideas on version control
+References: <4287CC47.2050509@club-internet.fr> <4287D285.4070509@free.fr> <4288481A.6060805@club-internet.fr> <42891757.4050506@club-internet.fr> <428AFBA2.2020706@dominicwilliams.net> <428E4535.8090108@club-internet.fr> <428F3AD6.3000208@dominicwilliams.net>
+Message-ID: <428F4D73.3030703@club-internet.fr>
+
+Dominic Williams a ?crit:
+
+> Hi Christophe,
+>
+>> Talking about file loading, I think I've mentioned it when we met but 
+>> I put the subject on the list, FWIW : the
+>>  enoent error on unsaved emacs files stops me from using the 
+>> stratagem I labeled 'parallel background validation',
+>>  on Linux. I wonder if the same happens with, say, a C program trying 
+>> to open an unsaved emacs file. Anyway I'll
+>>  try to look closer at this problem, and write a test for
+>>  it if I can.
+>
+>
+> Yes, that bug's in the TODO list, but I've taken note that
+> it's, uhm, bugging you, and fix it soon.
+>
+> If you post an acceptance test for the bug we'll use it with
+> pleasure (the test, not the bug ;-)
+>
+>> On another subject : I just read extreme_version_control.txt and I 
+>> found the idea really amazing ! Can you point me to theoretical 
+>> material on the
+>>  subject of undoable logical edits of code ? Thanks in advance.
+>
+>
+> It's really the other way round: if you or anyone can find some 
+> theoretical support for my wild ideas, I'd be delighted! I'd be 
+> surprised if no-one has ever at least done a Ph.D thesis on the subject. 
+
+
+Huh, it sounds creepy, suddenly. What if there was /no/ theoretical 
+basis for your wild ideas ? :-) I admit that while reading the example 
+(refactoring and renaming intertwined) I was thinking about how it could 
+apply (or not) to more complex examples. Bertrand Meyer has an 
+interesting analysis of the command/undo pattern in his book Object 
+Oriented Software Construction in which he warns about un-undoable 
+command sequences. I wonder if there might be un-undoable sequence of 
+refactoring... food for thought..
+Regards -- ct
+
+
+
+
+From christophe-thibaut at club-internet.fr  Tue May 24 01:56:28 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Tue, 24 May 2005 01:56:28 +0200
+Subject: [Xpdojo-users] the enoent bug
+Message-ID: <42926DAC.5060100@club-internet.fr>
+
+Hi xpdojo developers,
+
+I made some investigation about the enoent error occurring with emacs on 
+linux and I wrote a manual test, and a unit test (sort of). I even tried 
+a fix that seemed to work for me, but which couldn't by all means 
+qualify as a definitive solution.
+
+* Symptom :
+With emacs on linux, in a given directory, edit a new file :
+-module(bug_enoent).
+-export([foo/0]).
+
+foo() ->
+      ok.
+then save it, then edit it again and don't save it.
+In the same directory, launch an erl session
+type xpdojo:test_files(".").
+expected : [{acceptance,0,0},{unit,0,0},{modules,1,1}]
+obtained : ** exited: {{badmatch,{error,enoent}}, [{adlib,xray,4}, etc..
+
+* Significance :
+The enoent exception abruptly stops the xpdojo compile & test process, 
+so xpdojo is much less useful when using emacs as an editor on Linux 
+platform, and especially the testing_server feature.
+
+* Origin :
+Whenever emacs enters in a mode in wich a file is currently edited but 
+not saved yet, emacs creates a special symbolic link corresponding to 
+the file. (why emacs behaves like that could be an interesting subject, 
+but I didn't want to dive into it immediately).
+
+xpdojo, when triggered, scans the given directory for modified source 
+files to compile and tests to execute. Troubles come when the special 
+link is encountered : the xray/4 function, in an attempt to collect file 
+information about the files in the directory, stops with an enoent 
+exception on evaluation of file:read_file_info(filename:join(Root,Item), 
+just when the given Item refers to the emacs special symbolic link.
+
+* Evidence :
+Suppose we have edited but not saved bug_enoent.erl. We are under erl :
+ > ls().
+#bug_enoent.erl#     .#bug_enoent.erl     bug_enoent.beam
+bug_enoent.erl       bug_enoent.erl~
+
+The 2nd file is the special link. Although we have no problem reading
+the currently edited file :
+
+ > file:read_file_info("bug_enoent.erl").
+{ok,{file_info,59, regular,  read_write,  {{2005,5,23},{23,14,40}}, 
+{{2005,5,23},{23,15,33}}, {{2005,5,23},{23,15,33}}, 33188, 1, 774, 0, 
+1305052, 501, 501}}
+
+We have a problem reading file info on the link :
+ > file:read_file_info(".#bug_enoent.erl").
+{error,enoent}
+
+If we read /link/ info instead, we don't have get an error :
+ > file:read_link_info(".#bug_enoent.erl").
+{ok,{file_info,31, symlink, none, {{2005,5,23},{23,18,52}}, 
+{{2005,5,23},{23,18,52}}, {{2005,5,23},{23,18,52}}, 41471, 1, 774, 
+0,1305051, 501, 501}}
+
+* Automated test :
+In the attached file bug_enoent_ut.erl is a test related to the problem. 
+This test creates a directory from the parent directory, not a subdir, 
+in order to have test_files() working properly. Not to try this directly 
+from your home directory !
+ 
+* Solution ?
+file:read_link_info/2 reads information about any link, including 
+symbolic links, while read_file_info reads only about files. Maybe if 
+xray could use read_link_info instead of read_file_info, the pattern 
+{_,_,symlink} could be used to filter out symlinks from the list xray is 
+collecting info about, so that it would work no further with the symlink 
+and would skip to the next file in the list ?
+
+* Shameless Hack
+
+First, I runned xpdojo:test_files(".") on my xpdojo/src original dir and 
+got {unit, 88, 84}. There's something wrong with my platform, or with my 
+testing. Anyway, I was too curious to give up so I tried this :
+
+in adlib.erl, line # 200 replace
+{ok,File_info} = file:read_file_info(filename:join(Root,Item)),
+with
+{ok,File_info} = file:read_link_info(filename:join(Root,Item)),
+
+runned the tests again, and still got {unit,88,84}, but bug_enoent_ut 
+now pass. I tried an xpdojo session emacs and the testing_server, and as 
+far as I can tell, xpdojo and emacs now agree on what to compile and 
+what to test.
+
+* Conclusion :
+It seems on the surface that we may work around emacs special habits of 
+creating symlinks for currently edited files. On my linux station these 
+symlinks are no longer stopping me from using xpdojo as far as I can 
+tell. I'm quite content with this partial result, as I worried having to 
+abandon emacs for my coding in Erlang.
+
+I'm still quite annoyed by the fact that I didn't have all unit tests 
+passing for xpdojo. I didn't try to understand why (and I didn't 
+remember Dominic's explanations about xpdojo ability to test itself, and 
+the way it should do this), and I tried this without really 
+understanding what would happened if xray collected symlinks info just 
+as it collect file info. What is to be done with a symlink ?
+
+Anyway I just send these informations, as a track for you to explore the 
+problem further, and of course I leave it to you developers to design a 
+complete fix to this problem.
+
+Thanks for your attention.
+Regards --ct
+
+
+
+
+
+
+From christophe-thibaut at club-internet.fr  Tue May 24 02:06:47 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Tue, 24 May 2005 02:06:47 +0200
+Subject: [Xpdojo-users] the enoent bug
+References: <42926DAC.5060100@club-internet.fr>
+Message-ID: <42927017.8030808@club-internet.fr>
+
+Oops. The attached file just fell apart when I hit the send button .. ;-)
+
+
+Christophe Thibaut a ?crit:
+
+> Hi xpdojo developers,
+>
+> I made some investigation about the enoent error occurring with emacs 
+> on linux and I wrote a manual test, and a unit test (sort of). I even 
+> tried a fix that seemed to work for me, but which couldn't by all 
+> means qualify as a definitive solution.
+>
+> * Symptom :
+> With emacs on linux, in a given directory, edit a new file :
+> -module(bug_enoent).
+> -export([foo/0]).
+>
+> foo() ->
+>      ok.
+> then save it, then edit it again and don't save it.
+> In the same directory, launch an erl session
+> type xpdojo:test_files(".").
+> expected : [{acceptance,0,0},{unit,0,0},{modules,1,1}]
+> obtained : ** exited: {{badmatch,{error,enoent}}, [{adlib,xray,4}, etc..
+>
+> * Significance :
+> The enoent exception abruptly stops the xpdojo compile & test process, 
+> so xpdojo is much less useful when using emacs as an editor on Linux 
+> platform, and especially the testing_server feature.
+>
+> * Origin :
+> Whenever emacs enters in a mode in wich a file is currently edited but 
+> not saved yet, emacs creates a special symbolic link corresponding to 
+> the file. (why emacs behaves like that could be an interesting 
+> subject, but I didn't want to dive into it immediately).
+>
+> xpdojo, when triggered, scans the given directory for modified source 
+> files to compile and tests to execute. Troubles come when the special 
+> link is encountered : the xray/4 function, in an attempt to collect 
+> file information about the files in the directory, stops with an 
+> enoent exception on evaluation of 
+> file:read_file_info(filename:join(Root,Item), just when the given Item 
+> refers to the emacs special symbolic link.
+>
+> * Evidence :
+> Suppose we have edited but not saved bug_enoent.erl. We are under erl :
+> > ls().
+> #bug_enoent.erl#     .#bug_enoent.erl     bug_enoent.beam
+> bug_enoent.erl       bug_enoent.erl~
+>
+> The 2nd file is the special link. Although we have no problem reading
+> the currently edited file :
+>
+> > file:read_file_info("bug_enoent.erl").
+> {ok,{file_info,59, regular,  read_write,  {{2005,5,23},{23,14,40}}, 
+> {{2005,5,23},{23,15,33}}, {{2005,5,23},{23,15,33}}, 33188, 1, 774, 0, 
+> 1305052, 501, 501}}
+>
+> We have a problem reading file info on the link :
+> > file:read_file_info(".#bug_enoent.erl").
+> {error,enoent}
+>
+> If we read /link/ info instead, we don't have get an error :
+> > file:read_link_info(".#bug_enoent.erl").
+> {ok,{file_info,31, symlink, none, {{2005,5,23},{23,18,52}}, 
+> {{2005,5,23},{23,18,52}}, {{2005,5,23},{23,18,52}}, 41471, 1, 774, 
+> 0,1305051, 501, 501}}
+>
+> * Automated test :
+> In the attached file bug_enoent_ut.erl is a test related to the 
+> problem. This test creates a directory from the parent directory, not 
+> a subdir, in order to have test_files() working properly. Not to try 
+> this directly from your home directory !
+>
+> * Solution ?
+> file:read_link_info/2 reads information about any link, including 
+> symbolic links, while read_file_info reads only about files. Maybe if 
+> xray could use read_link_info instead of read_file_info, the pattern 
+> {_,_,symlink} could be used to filter out symlinks from the list xray 
+> is collecting info about, so that it would work no further with the 
+> symlink and would skip to the next file in the list ?
+>
+> * Shameless Hack
+>
+> First, I runned xpdojo:test_files(".") on my xpdojo/src original dir 
+> and got {unit, 88, 84}. There's something wrong with my platform, or 
+> with my testing. Anyway, I was too curious to give up so I tried this :
+>
+> in adlib.erl, line # 200 replace
+> {ok,File_info} = file:read_file_info(filename:join(Root,Item)),
+> with
+> {ok,File_info} = file:read_link_info(filename:join(Root,Item)),
+>
+> runned the tests again, and still got {unit,88,84}, but bug_enoent_ut 
+> now pass. I tried an xpdojo session emacs and the testing_server, and 
+> as far as I can tell, xpdojo and emacs now agree on what to compile 
+> and what to test.
+>
+> * Conclusion :
+> It seems on the surface that we may work around emacs special habits 
+> of creating symlinks for currently edited files. On my linux station 
+> these symlinks are no longer stopping me from using xpdojo as far as I 
+> can tell. I'm quite content with this partial result, as I worried 
+> having to abandon emacs for my coding in Erlang.
+>
+> I'm still quite annoyed by the fact that I didn't have all unit tests 
+> passing for xpdojo. I didn't try to understand why (and I didn't 
+> remember Dominic's explanations about xpdojo ability to test itself, 
+> and the way it should do this), and I tried this without really 
+> understanding what would happened if xray collected symlinks info just 
+> as it collect file info. What is to be done with a symlink ?
+>
+> Anyway I just send these informations, as a track for you to explore 
+> the problem further, and of course I leave it to you developers to 
+> design a complete fix to this problem.
+>
+> Thanks for your attention.
+> Regards --ct
+>
+>
+>
+>
+> _______________________________________________
+> Xpdojo-users mailing list
+> Xpdojo-users at lists.berlios.de
+> http://lists.berlios.de/mailman/listinfo/xpdojo-users
+>
+>
+
+
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: bugenoent_ut.erl
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050524/e0ee875c/attachment.ksh>
+
+From christophe-thibaut at club-internet.fr  Tue May 24 02:12:02 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Tue, 24 May 2005 02:12:02 +0200
+Subject: [Xpdojo-users] the enoent bug
+References: <42926DAC.5060100@club-internet.fr> <42927017.8030808@club-internet.fr>
+Message-ID: <42927152.4090208@club-internet.fr>
+
+Oops again. The previous attached file is a wrong attempt... Here comes 
+the is the right file, now.
+Sorry for this. --ct
+
+
+Christophe Thibaut a ?crit:
+
+> Oops. The attached file just fell apart when I hit the send button .. ;-)
+>
+>
+> Christophe Thibaut a ?crit:
+>
+>> Hi xpdojo developers,
+>>
+>> I made some investigation about the enoent error occurring with emacs 
+>> on linux and I wrote a manual test, and a unit test (sort of). I even 
+>> tried a fix that seemed to work for me, but which couldn't by all 
+>> means qualify as a definitive solution.
+>>
+>> * Symptom :
+>> With emacs on linux, in a given directory, edit a new file :
+>> -module(bug_enoent).
+>> -export([foo/0]).
+>>
+>> foo() ->
+>>      ok.
+>> then save it, then edit it again and don't save it.
+>> In the same directory, launch an erl session
+>> type xpdojo:test_files(".").
+>> expected : [{acceptance,0,0},{unit,0,0},{modules,1,1}]
+>> obtained : ** exited: {{badmatch,{error,enoent}}, [{adlib,xray,4}, etc..
+>>
+>> * Significance :
+>> The enoent exception abruptly stops the xpdojo compile & test 
+>> process, so xpdojo is much less useful when using emacs as an editor 
+>> on Linux platform, and especially the testing_server feature.
+>>
+>> * Origin :
+>> Whenever emacs enters in a mode in wich a file is currently edited 
+>> but not saved yet, emacs creates a special symbolic link 
+>> corresponding to the file. (why emacs behaves like that could be an 
+>> interesting subject, but I didn't want to dive into it immediately).
+>>
+>> xpdojo, when triggered, scans the given directory for modified source 
+>> files to compile and tests to execute. Troubles come when the special 
+>> link is encountered : the xray/4 function, in an attempt to collect 
+>> file information about the files in the directory, stops with an 
+>> enoent exception on evaluation of 
+>> file:read_file_info(filename:join(Root,Item), just when the given 
+>> Item refers to the emacs special symbolic link.
+>>
+>> * Evidence :
+>> Suppose we have edited but not saved bug_enoent.erl. We are under erl :
+>> > ls().
+>> #bug_enoent.erl#     .#bug_enoent.erl     bug_enoent.beam
+>> bug_enoent.erl       bug_enoent.erl~
+>>
+>> The 2nd file is the special link. Although we have no problem reading
+>> the currently edited file :
+>>
+>> > file:read_file_info("bug_enoent.erl").
+>> {ok,{file_info,59, regular,  read_write,  {{2005,5,23},{23,14,40}}, 
+>> {{2005,5,23},{23,15,33}}, {{2005,5,23},{23,15,33}}, 33188, 1, 774, 0, 
+>> 1305052, 501, 501}}
+>>
+>> We have a problem reading file info on the link :
+>> > file:read_file_info(".#bug_enoent.erl").
+>> {error,enoent}
+>>
+>> If we read /link/ info instead, we don't have get an error :
+>> > file:read_link_info(".#bug_enoent.erl").
+>> {ok,{file_info,31, symlink, none, {{2005,5,23},{23,18,52}}, 
+>> {{2005,5,23},{23,18,52}}, {{2005,5,23},{23,18,52}}, 41471, 1, 774, 
+>> 0,1305051, 501, 501}}
+>>
+>> * Automated test :
+>> In the attached file bug_enoent_ut.erl is a test related to the 
+>> problem. This test creates a directory from the parent directory, not 
+>> a subdir, in order to have test_files() working properly. Not to try 
+>> this directly from your home directory !
+>>
+>> * Solution ?
+>> file:read_link_info/2 reads information about any link, including 
+>> symbolic links, while read_file_info reads only about files. Maybe if 
+>> xray could use read_link_info instead of read_file_info, the pattern 
+>> {_,_,symlink} could be used to filter out symlinks from the list xray 
+>> is collecting info about, so that it would work no further with the 
+>> symlink and would skip to the next file in the list ?
+>>
+>> * Shameless Hack
+>>
+>> First, I runned xpdojo:test_files(".") on my xpdojo/src original dir 
+>> and got {unit, 88, 84}. There's something wrong with my platform, or 
+>> with my testing. Anyway, I was too curious to give up so I tried this :
+>>
+>> in adlib.erl, line # 200 replace
+>> {ok,File_info} = file:read_file_info(filename:join(Root,Item)),
+>> with
+>> {ok,File_info} = file:read_link_info(filename:join(Root,Item)),
+>>
+>> runned the tests again, and still got {unit,88,84}, but bug_enoent_ut 
+>> now pass. I tried an xpdojo session emacs and the testing_server, and 
+>> as far as I can tell, xpdojo and emacs now agree on what to compile 
+>> and what to test.
+>>
+>> * Conclusion :
+>> It seems on the surface that we may work around emacs special habits 
+>> of creating symlinks for currently edited files. On my linux station 
+>> these symlinks are no longer stopping me from using xpdojo as far as 
+>> I can tell. I'm quite content with this partial result, as I worried 
+>> having to abandon emacs for my coding in Erlang.
+>>
+>> I'm still quite annoyed by the fact that I didn't have all unit tests 
+>> passing for xpdojo. I didn't try to understand why (and I didn't 
+>> remember Dominic's explanations about xpdojo ability to test itself, 
+>> and the way it should do this), and I tried this without really 
+>> understanding what would happened if xray collected symlinks info 
+>> just as it collect file info. What is to be done with a symlink ?
+>>
+>> Anyway I just send these informations, as a track for you to explore 
+>> the problem further, and of course I leave it to you developers to 
+>> design a complete fix to this problem.
+>>
+>> Thanks for your attention.
+>> Regards --ct
+>>
+>>
+>>
+>>
+>> _______________________________________________
+>> Xpdojo-users mailing list
+>> Xpdojo-users at lists.berlios.de
+>> http://lists.berlios.de/mailman/listinfo/xpdojo-users
+>>
+>>
+>
+>
+>------------------------------------------------------------------------
+>
+>-module(bugenoent_ut).
+>-compile(export_all).
+>
+>one_test() ->
+>    Result = (catch xpdojo:test_files("data")),
+>    Result = {'EXIT', {{badmatch,{error,enoent}},_}}. 
+>
+>  
+>
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050524/663a969d/attachment.html>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: bug_enoent_ut.erl
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050524/663a969d/attachment.ksh>
+
+From berlios_lists at dominicwilliams.net  Wed May 25 23:17:44 2005
+From: berlios_lists at dominicwilliams.net (Dominic Williams)
+Date: Wed, 25 May 2005 23:17:44 +0200
+Subject: [Xpdojo-users] the enoent bug
+In-Reply-To: <42926DAC.5060100@club-internet.fr>
+References: <42926DAC.5060100@club-internet.fr>
+Message-ID: <4294EB78.4090509@dominicwilliams.net>
+
+Hi Christophe,
+
+> I made some investigation about the enoent error 
+> occurring with emacs on linux and I wrote a manual test,
+>  and a unit test (sort of). I even tried a fix that
+> seemed to work for me, but which couldn't by all means
+> qualify as a definitive solution.
+
+Thanks very much for all the groundwork. You saved us a lot
+of time investigating, and I didn't even know about
+read_link_info. Your suggested fix does have a side-effect,
+unfortunately, which is that people can't use a (correct)
+symlink to refer to a real erlang source file any more...
+I've seen this done to handle things like cross-platform
+development.
+
+Right now I can' think of any other situation (than the
+emacs thing) in which this enoent error would occur, so I'm
+thinking we might just catch the runtime error, report a
+warning, and continue.
+
+> I'm still quite annoyed by the fact that I didn't have 
+> all unit tests passing for xpdojo. I didn't try to 
+> understand why (and I didn't remember Dominic's 
+> explanations about xpdojo ability to test itself, and the
+>  way it should do this),
+
+Yeah, that is really strange. Could you just run
+xpdojo:test_files() on xpdojo (that works fine, what doesn't
+work is the continuous test server), and send us the output? 
+Also give us the Erlang version you are using.
+
+> and I tried this without really understanding what would
+> happened if xray collected symlinks info just as it
+> collect file info. What is to be done with a symlink ?
+
+As I mentioned above, people sometimes use symlink for
+source files, so they should be /followed through/ to the
+pointed file (which is what read_file_info does), not
+treated specially (which is what read_link_info does).
+
+The problem here is that we have an /invalid/ symlink.
+
+> Anyway I just send these informations, as a track for you
+>  to explore the problem further, and of course I leave it
+>  to you developers to design a complete fix to this 
+> problem.
+
+Hey, don't worry, if we didn't want people nosing around and
+being helpful, we wouldn't have open-sourced ;-)
+
+Thanks again,
+
+Dominic.
+
+
+
+From berlios_lists at dominicwilliams.net  Thu May 26 10:46:08 2005
+From: berlios_lists at dominicwilliams.net (Dominic Williams)
+Date: Thu, 26 May 2005 10:46:08 +0200
+Subject: [Xpdojo-users] 2 Users Stories
+In-Reply-To: <4287CC47.2050509@club-internet.fr>
+References: <4287CC47.2050509@club-internet.fr>
+Message-ID: <42958CD0.2030300@dominicwilliams.net>
+
+We have not yet discussed Christophe's /second/
+suggested story:
+
+     Creating a file named xpdojo.cfg into my project
+     directory, I can configure xpdojo for my project so
+     that unit test files and test functions within
+     these files can be recognized.
+
+     Here is an example of xpdojo.cfg file :
+
+     unit_modules_filter=*_ut
+     unit_functions_filter=test_*
+
+     The first line indicates that source files
+     terminated by "_ut" are unit test modules. The
+     second line specify that functions beginning with
+     "test_" are test functions.
+
+     The pattern syntax for filters is either a star
+     followed by a litteral suffix, or a prefix followed
+     by a star. A star alone, only literals, or an empty
+     parttern are not allowed and won't be recognized by
+     xpdojo.
+
+Christophe, it is already possible to "save" the
+options you use for a project in a file. One way would
+be to create a myproj.xyz file, in which you enter:
+
+xpdojo:test_files(".", [{unit_modules_filter, ...
+
+etc.
+
+Then, from the erl shell, call file:eval("myproj.xyz").
+
+Another way is to define your own, private, shell
+functions. You create a ~/user_default.erl module, with
+a function for each project you develop with xpdojo,
+and/or a function that just returns the options (then
+you can choose to use them with test_files or with the
+continuous server:
+
+-module(user_default).
+-export([proj1/0]).
+
+proj1_options() ->
+   [{unit_modules_filter, adlib:ends_with("ut")}].
+
+proj1() ->
+   xpdojo:test_files("/path/dir", proj1_options()).
+
+Then, you automatically load it by adding this to your
+.erlang file:
+
+code:load_abs("..../user_default").
+
+Now, the functions defined in the module are available
+to you directly (without needing the user_default:
+prefix) from your erlang shell.
+
+How does this compare with your suggested story?
+
+What I like about it is:
+
+1) we don't need to invent a syntax for a configuration
+    file: the syntax is pure Erlang.
+
+2) it's completely flexible.
+
+3) Erlang programmers already know about it.
+
+Working in the Java world for the last five months is
+making me allergic to configuration files ;-) But, if
+you still think there is value there, we can always add
+it to the list of stories, although I personally
+would give it a very low priority.
+
+And don't let that discourage you from making other
+suggestions!
+
+Cheers,
+
+Dominic.
+
+
+
+From christophe-thibaut at club-internet.fr  Thu May 26 19:52:35 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Thu, 26 May 2005 19:52:35 +0200
+Subject: [Xpdojo-users] the enoent bug
+References: <42926DAC.5060100@club-internet.fr> <4294EB78.4090509@dominicwilliams.net>
+Message-ID: <42960CE3.1040100@club-internet.fr>
+
+Dominic Williams a ?crit:
+
+> Hi Christophe, 
+
+Hi Dominic,
+
+>
+> Your suggested fix does have a side-effect,
+> unfortunately, which is that people can't use a (correct)
+> symlink to refer to a real erlang source file any more...
+> I've seen this done to handle things like cross-platform
+> development. 
+
+Yes, that's what I thought when naming the test. You are right that it's 
+a legitimate use of symlinks..
+
+>
+>  Could you just run
+> xpdojo:test_files() on xpdojo (that works fine, what doesn't
+> work is the continuous test server), and send us the output? Also give 
+> us the Erlang version you are using.
+
+These outputs are attached. I ran xpdojo:test_files(".") from within the 
+xpdojo dir..
+
+>> Anyway I just send these informations, as a track for you
+>>  to explore the problem further, and of course I leave it
+>>  to you developers to design a complete fix to this problem.
+>
+>
+> Hey, don't worry, if we didn't want people nosing around and
+> being helpful, we wouldn't have open-sourced ;-)
+
+xpdojo is heplful whith my programming in Erlang, and runs for hours 
+without a stop. So its my turn to be helpful  ;-)
+Regards
+
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: linux_erl53_xpdojo53.txt
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050526/7aca99da/attachment.txt>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: linux_erl546_xpdojo53.txt
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050526/7aca99da/attachment-0001.txt>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: win98_erl545_xpdojo53.txt
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050526/7aca99da/attachment-0002.txt>
+
+From christophe-thibaut at club-internet.fr  Thu May 26 23:43:59 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Thu, 26 May 2005 23:43:59 +0200
+Subject: [Xpdojo-users] 2 Users Stories
+References: <4287CC47.2050509@club-internet.fr> <42958CD0.2030300@dominicwilliams.net>
+Message-ID: <4296431F.9090401@club-internet.fr>
+
+Dominic Williams a ?crit:
+
+>
+> Christophe, it is already possible to "save" the
+> options you use for a project in a file. One way would
+> be to create a myproj.xyz file, in which you enter:
+>
+> xpdojo:test_files(".", [{unit_modules_filter, ...
+>
+> etc.
+>
+> Then, from the erl shell, call file:eval("myproj.xyz"). 
+
+Yes: that's the kind of thing I was looking for before I wrote the 
+story. Only I didn't look close enough. My line of thought was :
+#1- in order to compile anything I need to set test_files options
+#2- if I set options in an erl source, I'll have to compile it, but not 
+with test_files because of #1. Too bad.
+So the possibility to evaluate some code before compiling anything fits 
+very well here. I'll just launch test_files (or the testing_server) from 
+my config file, written in Erlang. Great !
+
+>
+>
+> Another way is to define your own, private, shell
+> functions. You create a ~/user_default.erl module, with
+> a function for each project you develop with xpdojo,
+> and/or a function that just returns the options (then
+> you can choose to use them with test_files or with the
+> continuous server:
+>
+> -module(user_default).
+> -export([proj1/0]).
+>
+> proj1_options() ->
+>   [{unit_modules_filter, adlib:ends_with("ut")}].
+>
+> proj1() ->
+>   xpdojo:test_files("/path/dir", proj1_options()).
+>
+> Then, you automatically load it by adding this to your
+> ..erlang file:
+>
+> code:load_abs("..../user_default"). 
+
+Sounds nice. I still have to study about code loading and erlang 
+configuration, but I'll give a try to this way of doing.
+
+>
+>
+> Now, the functions defined in the module are available
+> to you directly (without needing the user_default:
+> prefix) from your erlang shell.
+>
+> How does this compare with your suggested story?
+>
+> What I like about it is:
+>
+> 1) we don't need to invent a syntax for a configuration
+>    file: the syntax is pure Erlang. 
+
+Yeah that's what bothered me ("the best should be to stay in erlang 
+syntax"). Both solutions you explained solve it nicely.
+
+>
+>
+> 2) it's completely flexible.
+>
+> 3) Erlang programmers already know about it.
+>
+> Working in the Java world for the last five months is
+> making me allergic to configuration files ;-) 
+
+I don't like much config files too. We tend to forget about them, and 
+they are often heterogeneous.
+That makes for 4 very compelling arguments in favor or *not* creating a 
+special config file (and the supplementary code to parse it :-) .
+
+> But, if
+> you still think there is value there, we can always add
+> it to the list of stories, although I personally
+> would give it a very low priority. 
+
+Oh no, I think its OK to tear the story card :-) The thorn has just gone 
+away.
+
+>
+> And don't let that discourage you from making other
+> suggestions! 
+
+Given the lots of advice and information in your responses to my 
+suggestions, I'll certainly go on running the risk ;-)  I have no 
+problem with discarding my own ideas, especially when it's because I've 
+learned something or been given a better idea :-)
+
+Thank you for the time you spent on the problem.
+Regards,
+Christophe
+
+
+
+From berlios_lists at dominicwilliams.net  Fri May 27 00:08:28 2005
+From: berlios_lists at dominicwilliams.net (Dominic Williams)
+Date: Fri, 27 May 2005 00:08:28 +0200
+Subject: [Xpdojo-users] the enoent bug
+In-Reply-To: <42960CE3.1040100@club-internet.fr>
+References: <42926DAC.5060100@club-internet.fr> <4294EB78.4090509@dominicwilliams.net> <42960CE3.1040100@club-internet.fr>
+Message-ID: <429648DC.30700@dominicwilliams.net>
+
+Christophe Thibaut wrote:
+
+> These outputs are attached. I ran xpdojo:test_files(".")
+> from within the xpdojo dir..
+
+and:
+
+> [{unit,88,84},{modules,15,15}]
+
+Amazing: although we have run the tests on five different 
+machines and several OS, we have never come across what you 
+appear to have on /both/ your platforms: directory contents 
+listed in a different order!
+
+So our unit tests were too stringent, although it doesn't 
+prevent xpdojo from working correctly.
+
+Revision 55 now has more fuzzy unit tests, at least for 
+those that failed for you. I'd appreciate your trying it on 
+your platforms.
+
+Cheers,
+
+Dominic.
+
+
+
+From christophe-thibaut at club-internet.fr  Fri May 27 21:39:45 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Fri, 27 May 2005 21:39:45 +0200
+Subject: [Xpdojo-users] the enoent bug
+References: <42926DAC.5060100@club-internet.fr> <4294EB78.4090509@dominicwilliams.net> <42960CE3.1040100@club-internet.fr> <429648DC.30700@dominicwilliams.net>
+Message-ID: <42977781.4000309@club-internet.fr>
+
+Dominic Williams a ?crit:
+
+> Christophe Thibaut wrote:
+>
+>> These outputs are attached. I ran xpdojo:test_files(".")
+>> from within the xpdojo dir..
+>
+>
+> and:
+>
+>> [{unit,88,84},{modules,15,15}]
+>
+>
+> Amazing: although we have run the tests on five different machines and 
+> several OS, we have never come across what you appear to have on 
+> /both/ your platforms: directory contents listed in a different order!
+>
+> So our unit tests were too stringent, although it doesn't prevent 
+> xpdojo from working correctly.
+>
+> Revision 55 now has more fuzzy unit tests, at least for those that 
+> failed for you. I'd appreciate your trying it on your platforms.
+
+Dominic,
+
+I still have to check it on my linux platforms, but from what I see here 
+on win98
+
+  [{acceptance,20,17},{unit,89,89},{modules,15,15}]
+
+it seems revision 55 should be OK regarding developer tests. Is there 3 
+pending acceptance tests currently on the project ?
+
+Regards
+Christophe
+
+
+
+
+From christophe-thibaut at club-internet.fr  Sat May 28 21:51:56 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Sat, 28 May 2005 21:51:56 +0200
+Subject: [Xpdojo-users] the enoent bug
+References: <42926DAC.5060100@club-internet.fr> <4294EB78.4090509@dominicwilliams.net> <42960CE3.1040100@club-internet.fr> <429648DC.30700@dominicwilliams.net>
+Message-ID: <4298CBDC.3060502@club-internet.fr>
+
+Dominic Williams a ?crit:
+
+> Revision 55 now has more fuzzy unit tests, at least for those that 
+> failed for you. I'd appreciate your trying it on your platforms.
+
+Here are the complete results. I finally managed to make and install erl 
+v5.4.6 on my linux laptop, so the test on erl v.5.3 are somewhat 
+irrelevant now.
+
+Installing erlang on this laptop was such a boring ordeal, because when 
+in long compilation phases, the machine stopped bluntly, presumably 
+because of cpu going too hot (?) so I had to start it again and get back 
+where make had let things hanging. Thanks to incremental building, and 
+only after laying my laptop on a pack of ice (the kind you put in cool 
+bags) I could complete the install. :-p
+
+Regards --ct
+
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: win98_erl545_xpdojo55.txt
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050528/c7446c29/attachment.txt>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: linux_erl546_xpdojo55.txt
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050528/c7446c29/attachment-0001.txt>
+
+From berlios_lists at dominicwilliams.net  Sat May 28 23:34:45 2005
+From: berlios_lists at dominicwilliams.net (Dominic Williams)
+Date: Sat, 28 May 2005 23:34:45 +0200
+Subject: [Xpdojo-users] Platforms (was: the enoent bug)
+In-Reply-To: <4298CBDC.3060502@club-internet.fr>
+References: <42926DAC.5060100@club-internet.fr> <4294EB78.4090509@dominicwilliams.net> <42960CE3.1040100@club-internet.fr> <429648DC.30700@dominicwilliams.net> <4298CBDC.3060502@club-internet.fr>
+Message-ID: <4298E3F5.4000406@dominicwilliams.net>
+
+Christophe Thibaut wrote:
+
+> Here are the complete results.
+
+Thanks. The current status is that we are at 20/20, except
+for being at 19/20 on Windows with a recent Erlang version
+(can't remember which). So your results on different
+platforms are most interesting, we'll analyze them.
+
+Your CPU can cool down, now!
+
+Cheers,
+
+Dominic.
+
+

@@ -1,0 +1,174 @@
+From christophe-thibaut at club-internet.fr  Sat Jun  4 10:31:42 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Sat, 04 Jun 2005 10:31:42 +0200
+Subject: [Xpdojo-users] The no file incident
+Message-ID: <42A166EE.4060806@club-internet.fr>
+
+Hi xpdojo developers,
+
+I report here the "no file" incident (I'd like to stop terming things 
+"bugs". One gets addicted to misrepresentations contained in the word).
+
+Short description :
+When a module source name and the module name don't match by Erlang 
+syntax rules, testing_server halts instead of reporting the error. 
+(xpdojo revision used : 56)
+
+Symptom:
+launch erl and start a testing_server loop :
+
+ > testing_server:start(".", fun(M)->io:format("~w\n",[M]) end, 
+xpdojo:default_options()).
+
+edit a new file : foo.erl
+-module(foo).
+-export([bar/0]).
+
+bar() ->
+    ok.
+
+and save it. (testing_server compiles it in the background). Then edit 
+the file again and change the module name (not a good thing to do) :
+-module(bar).
+
+and save again.
+
+Expected result :
+testing_server should signal an error akin to the message we get with 
+the command c(foo) :
+ > c(foo).
+** Module name 'bar' does not match file name 'foo' **
+{error,badfile}
+
+Obtained result :
+testing_server stops with an error in process :
+
+Error in process <0.90.0> with exit value: 
+{{badmatch,{error,nofile}},[{xpdojo,'-post_compile/2-fun-0-',1},{lists,foreach,2},{xpdojo,post_compile,2},{xpdojo,with,3},{testing_server,loop,3}]}
+
+and have to be started again.
+
+
+Supposed origin :
+xpdojo found a source file defining a module "bar", but the 
+corresponding code file "bar.beam" cannot be found, because it hasn't 
+been compiled.
+
+
+Significance :
+In almost any Erlang project, a source file named "foo.erl" should begin 
+with the line "-module(foo)." Yet, many Erlang beginners will mistakenly 
+infringe this rule, if only on account of mis-typing . Emacs erlang mode 
+gently warns the user "Module does not match file name. Modify source (y 
+or n) ?" and get him/her back on track, but not every source editor 
+will. (As a matter of fact I bumped into this one by typing 
+"-module(foo.erl).", a declaration upon which Emacs found nothing to 
+complain about).
+
+Once you are used to Erlang syntax, halting the testing server with such 
+an error is rather unlikely, but it can have a negative impact on 
+newcomers both to Erlang and xpdojo. The way I see it, testing_server is 
+part of my Erlang IDE, and I'm less productive if my IDE stops on such 
+an error instead of warning me. Agreed, is not as if the whole system 
+crashed (which happens in very popular commercial IDEs) but still it can 
+be an annoyance.
+
+Thank you for listening,
+Regards to all.
+Christophe.
+
+
+
+
+
+
+
+
+
+
+
+From christophe-thibaut at club-internet.fr  Sat Jun  4 10:36:09 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Sat, 04 Jun 2005 10:36:09 +0200
+Subject: [Xpdojo-users] offtopic - testing mailing list -
+Message-ID: <42A167F9.1030708@club-internet.fr>
+
+sorry. just testing my access to the list.
+
+
+
+
+From berlios_lists at dominicwilliams.net  Tue Jun  7 22:16:55 2005
+From: berlios_lists at dominicwilliams.net (Dominic Williams)
+Date: Tue, 07 Jun 2005 22:16:55 +0200
+Subject: [Xpdojo-users] Platforms, the sequel
+In-Reply-To: <42A166EE.4060806@club-internet.fr>
+References: <42A166EE.4060806@club-internet.fr>
+Message-ID: <42A600B7.3000400@dominicwilliams.net>
+
+The other day, when the lists server was down, Christophe 
+sent me privately:
+
+ >> Here the results of test_files(".") on revision 56 on my
+ >> win98 and linux platforms.
+
+Thanks! Those results show that Nico and I worked too late
+last tuesday:
+
+- we forgot to make the new acceptance test portable on
+platforms that don't support symlinks.
+- we forgot to use the brand new "fuzzy list comparison"
+function for unit tests that list directory contents...
+
+I believe I fixed those things tonight (revision 57), but I 
+can't be sure as the symptoms only appear on other platforms.
+
+Cheers,
+
+Dominic.
+
+
+From christophe-thibaut at club-internet.fr  Tue Jun  7 23:26:07 2005
+From: christophe-thibaut at club-internet.fr (Christophe Thibaut)
+Date: Tue, 07 Jun 2005 23:26:07 +0200
+Subject: [Xpdojo-users] Platforms, the sequel
+References: <42A166EE.4060806@club-internet.fr> <42A600B7.3000400@dominicwilliams.net>
+Message-ID: <42A610EF.8060700@club-internet.fr>
+
+Dominic Williams a ?crit:
+
+> The other day, when the lists server was down, Christophe sent me 
+> privately:
+>
+> >> Here the results of test_files(".") on revision 56 on my
+> >> win98 and linux platforms.
+>
+> Thanks! Those results show that Nico and I worked too late
+> last tuesday:
+>
+> - we forgot to make the new acceptance test portable on
+> platforms that don't support symlinks.
+> - we forgot to use the brand new "fuzzy list comparison"
+> function for unit tests that list directory contents...
+>
+> I believe I fixed those things tonight (revision 57), but I can't be 
+> sure as the symptoms only appear on other platforms. 
+
+I attached the results on my win98 and my linux platforms.
+Maybe I should investigate further on these platforms rather than just 
+sending the results :-). Please tell me if there's anything more I can 
+check or look at.
+
+Regards.
+Christophe
+
+
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: xpdojo57_win98_erl545.txt
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050607/7008520e/attachment.txt>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: xpdojo57_linux_erl546.txt
+URL: <https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050607/7008520e/attachment-0001.txt>
+

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Xpdojo-users] 2 Users Stories
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xpdojo-users/2005-May/index.html" >
+   <LINK REL="made" HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%202%20Users%20Stories&In-Reply-To=%3C428E4535.8090108%40club-internet.fr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000008.html">
+   <LINK REL="Next"  HREF="000010.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Xpdojo-users] 2 Users Stories</H1>
+    <B>Christophe Thibaut</B> 
+    <A HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%202%20Users%20Stories&In-Reply-To=%3C428E4535.8090108%40club-internet.fr%3E"
+       TITLE="[Xpdojo-users] 2 Users Stories">christophe-thibaut at club-internet.fr
+       </A><BR>
+    <I>Fri May 20 22:14:45 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000008.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+        <LI>Next message: <A HREF="000010.html">[Xpdojo-users] One bug + ideas on version control
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dominic Williams a &#233;crit:
+
+&gt;<i> Christophe Thibaut wrote:
+</I>&gt;<i>
+</I>&gt;<i> &gt;&gt; It works ! Only I should give it a notification function
+</I>&gt;<i> &gt;&gt; smarter than
+</I>&gt;<i> &gt;&gt;  fun(Msg) -&gt; io:format(&quot;~w&quot;, [Msg])
+</I>&gt;<i> &gt;&gt; because with this I have my erl shell continuously
+</I>&gt;<i> &gt;&gt; displaying the same errors. A smarter function would not
+</I>&gt;<i> &gt;&gt; print Msg again if the tests results are unchanged. I'll
+</I>&gt;<i> &gt;&gt; try to do that.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; In fact only compile errors are displayed again and again,
+</I>&gt;<i> &gt; while reporting the same broken tests doesn't trigger the
+</I>&gt;<i> &gt; notification function again. Is it deliberately wanted
+</I>&gt;<i> &gt; behaviour ?
+</I>&gt;<i>
+</I>&gt;<i> Ah, OK, I understand now. I was wondering why you first said
+</I>&gt;<i> the same errors are continuously displayed, because that is
+</I>&gt;<i> not supposed to happen. However, if you have compile errors,
+</I>&gt;<i> I understand. It's not actually deliberate, but at least I
+</I>&gt;<i> know why!
+</I>&gt;<i>
+</I>&gt;<i> It all boils down to how xpdojo:test_files/2 computes the
+</I>&gt;<i> 'unchanged' state: by comparing the list and age of loaded
+</I>&gt;<i> modules with the list and age of source code. It also so
+</I>&gt;<i> happens that a module is purged from the code loader just
+</I>&gt;<i> /before/ compilation, so when a compilation fails, the new
+</I>&gt;<i> version can't be loaded, but the old one is lost! So xpdojo
+</I>&gt;<i> thinks that the source tree has a new module, and doesn't
+</I>&gt;<i> consider the tree 'unchanged'.
+</I>&gt;<i>
+</I>&gt;<i> I'd say that's a bug, because test_files/2 should really
+</I>&gt;<i> return unchanged. I'll add it to the TODO. 
+</I>
+Thank you, Dominic.
+
+Talking about file loading, I think I've mentioned it when we met but I 
+put the subject on the list, FWIW : the enoent error on unsaved emacs 
+files stops me from using the stratagem I labeled 'parallel background 
+validation', on Linux. I wonder if the same happens with, say, a C 
+program trying to open an unsaved emacs file. Anyway I'll try to look 
+closer at this problem, and write a test for it if I can.
+
+On another subject : I just read extreme_version_control.txt and I found 
+the idea really amazing ! Can you point me to theoretical material on 
+the subject of undoable logical edits of code ? Thanks in advance.
+
+Regards
+Christophe
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000008.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+	<LI>Next message: <A HREF="000010.html">[Xpdojo-users] One bug + ideas on version control
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xpdojo-users">More information about the Xpdojo-users
+mailing list</a><br>
+</body></html>

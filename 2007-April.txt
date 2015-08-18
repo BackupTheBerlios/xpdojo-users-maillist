@@ -1,0 +1,23 @@
+From xpdoka-dated-1177883846.65730b at dominicwilliams.net  Tue Apr 24 23:57:21 2007
+From: xpdoka-dated-1177883846.65730b at dominicwilliams.net (Dominic Williams)
+Date: Tue, 24 Apr 2007 23:57:21 +0200
+Subject: [Xpdojo-users] Moving to extremeforge.net
+Message-ID: <462E7D41.40805@dominicwilliams.net>
+
+Hello,
+
+XP Dojo has been renamed Extreme Forge, and the project is moving to:
+
+http://www.extremeforge.net
+
+There is a new mailing list for Extreme Forge users: users at extremeforge.net
+
+I could not work out how to list current subscribers to xpdojo-users, so 
+please re-subscribe yourself to the new list by sending an empty email 
+users-subscribe at extremeforge.net.
+
+I hope to see you soon over at Extreme Forge !
+
+Dominic.
+
+

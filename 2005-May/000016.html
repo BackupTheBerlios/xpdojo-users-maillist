@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Xpdojo-users] 2 Users Stories
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xpdojo-users/2005-May/index.html" >
+   <LINK REL="made" HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%202%20Users%20Stories&In-Reply-To=%3C42958CD0.2030300%40dominicwilliams.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000011.html">
+   <LINK REL="Next"  HREF="000018.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Xpdojo-users] 2 Users Stories</H1>
+    <B>Dominic Williams</B> 
+    <A HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%202%20Users%20Stories&In-Reply-To=%3C42958CD0.2030300%40dominicwilliams.net%3E"
+       TITLE="[Xpdojo-users] 2 Users Stories">berlios_lists at dominicwilliams.net
+       </A><BR>
+    <I>Thu May 26 10:46:08 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000011.html">[Xpdojo-users] One bug + ideas on version control
+</A></li>
+        <LI>Next message: <A HREF="000018.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16">[ date ]</a>
+              <a href="thread.html#16">[ thread ]</a>
+              <a href="subject.html#16">[ subject ]</a>
+              <a href="author.html#16">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>We have not yet discussed Christophe's /second/
+suggested story:
+
+     Creating a file named xpdojo.cfg into my project
+     directory, I can configure xpdojo for my project so
+     that unit test files and test functions within
+     these files can be recognized.
+
+     Here is an example of xpdojo.cfg file :
+
+     unit_modules_filter=*_ut
+     unit_functions_filter=test_*
+
+     The first line indicates that source files
+     terminated by &quot;_ut&quot; are unit test modules. The
+     second line specify that functions beginning with
+     &quot;test_&quot; are test functions.
+
+     The pattern syntax for filters is either a star
+     followed by a litteral suffix, or a prefix followed
+     by a star. A star alone, only literals, or an empty
+     parttern are not allowed and won't be recognized by
+     xpdojo.
+
+Christophe, it is already possible to &quot;save&quot; the
+options you use for a project in a file. One way would
+be to create a myproj.xyz file, in which you enter:
+
+xpdojo:test_files(&quot;.&quot;, [{unit_modules_filter, ...
+
+etc.
+
+Then, from the erl shell, call file:eval(&quot;myproj.xyz&quot;).
+
+Another way is to define your own, private, shell
+functions. You create a ~/user_default.erl module, with
+a function for each project you develop with xpdojo,
+and/or a function that just returns the options (then
+you can choose to use them with test_files or with the
+continuous server:
+
+-module(user_default).
+-export([proj1/0]).
+
+proj1_options() -&gt;
+   [{unit_modules_filter, adlib:ends_with(&quot;ut&quot;)}].
+
+proj1() -&gt;
+   xpdojo:test_files(&quot;/path/dir&quot;, proj1_options()).
+
+Then, you automatically load it by adding this to your
+.erlang file:
+
+code:load_abs(&quot;..../user_default&quot;).
+
+Now, the functions defined in the module are available
+to you directly (without needing the user_default:
+prefix) from your erlang shell.
+
+How does this compare with your suggested story?
+
+What I like about it is:
+
+1) we don't need to invent a syntax for a configuration
+    file: the syntax is pure Erlang.
+
+2) it's completely flexible.
+
+3) Erlang programmers already know about it.
+
+Working in the Java world for the last five months is
+making me allergic to configuration files ;-) But, if
+you still think there is value there, we can always add
+it to the list of stories, although I personally
+would give it a very low priority.
+
+And don't let that discourage you from making other
+suggestions!
+
+Cheers,
+
+Dominic.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000011.html">[Xpdojo-users] One bug + ideas on version control
+</A></li>
+	<LI>Next message: <A HREF="000018.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16">[ date ]</a>
+              <a href="thread.html#16">[ thread ]</a>
+              <a href="subject.html#16">[ subject ]</a>
+              <a href="author.html#16">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xpdojo-users">More information about the Xpdojo-users
+mailing list</a><br>
+</body></html>

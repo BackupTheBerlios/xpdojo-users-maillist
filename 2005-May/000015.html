@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Xpdojo-users] the enoent bug
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xpdojo-users/2005-May/index.html" >
+   <LINK REL="made" HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%20the%20enoent%20bug&In-Reply-To=%3C4294EB78.4090509%40dominicwilliams.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000014.html">
+   <LINK REL="Next"  HREF="000017.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Xpdojo-users] the enoent bug</H1>
+    <B>Dominic Williams</B> 
+    <A HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%20the%20enoent%20bug&In-Reply-To=%3C4294EB78.4090509%40dominicwilliams.net%3E"
+       TITLE="[Xpdojo-users] the enoent bug">berlios_lists at dominicwilliams.net
+       </A><BR>
+    <I>Wed May 25 23:17:44 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000014.html">[Xpdojo-users] the enoent bug
+</A></li>
+        <LI>Next message: <A HREF="000017.html">[Xpdojo-users] the enoent bug
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Christophe,
+
+&gt;<i> I made some investigation about the enoent error 
+</I>&gt;<i> occurring with emacs on linux and I wrote a manual test,
+</I>&gt;<i>  and a unit test (sort of). I even tried a fix that
+</I>&gt;<i> seemed to work for me, but which couldn't by all means
+</I>&gt;<i> qualify as a definitive solution.
+</I>
+Thanks very much for all the groundwork. You saved us a lot
+of time investigating, and I didn't even know about
+read_link_info. Your suggested fix does have a side-effect,
+unfortunately, which is that people can't use a (correct)
+symlink to refer to a real erlang source file any more...
+I've seen this done to handle things like cross-platform
+development.
+
+Right now I can' think of any other situation (than the
+emacs thing) in which this enoent error would occur, so I'm
+thinking we might just catch the runtime error, report a
+warning, and continue.
+
+&gt;<i> I'm still quite annoyed by the fact that I didn't have 
+</I>&gt;<i> all unit tests passing for xpdojo. I didn't try to 
+</I>&gt;<i> understand why (and I didn't remember Dominic's 
+</I>&gt;<i> explanations about xpdojo ability to test itself, and the
+</I>&gt;<i>  way it should do this),
+</I>
+Yeah, that is really strange. Could you just run
+xpdojo:test_files() on xpdojo (that works fine, what doesn't
+work is the continuous test server), and send us the output? 
+Also give us the Erlang version you are using.
+
+&gt;<i> and I tried this without really understanding what would
+</I>&gt;<i> happened if xray collected symlinks info just as it
+</I>&gt;<i> collect file info. What is to be done with a symlink ?
+</I>
+As I mentioned above, people sometimes use symlink for
+source files, so they should be /followed through/ to the
+pointed file (which is what read_file_info does), not
+treated specially (which is what read_link_info does).
+
+The problem here is that we have an /invalid/ symlink.
+
+&gt;<i> Anyway I just send these informations, as a track for you
+</I>&gt;<i>  to explore the problem further, and of course I leave it
+</I>&gt;<i>  to you developers to design a complete fix to this 
+</I>&gt;<i> problem.
+</I>
+Hey, don't worry, if we didn't want people nosing around and
+being helpful, we wouldn't have open-sourced ;-)
+
+Thanks again,
+
+Dominic.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000014.html">[Xpdojo-users] the enoent bug
+</A></li>
+	<LI>Next message: <A HREF="000017.html">[Xpdojo-users] the enoent bug
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#15">[ date ]</a>
+              <a href="thread.html#15">[ thread ]</a>
+              <a href="subject.html#15">[ subject ]</a>
+              <a href="author.html#15">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xpdojo-users">More information about the Xpdojo-users
+mailing list</a><br>
+</body></html>

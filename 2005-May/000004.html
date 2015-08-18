@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Xpdojo-users] 2 Users Stories
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/xpdojo-users/2005-May/index.html" >
+   <LINK REL="made" HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%202%20Users%20Stories&In-Reply-To=%3C4287CC47.2050509%40club-internet.fr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000003.html">
+   <LINK REL="Next"  HREF="000005.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Xpdojo-users] 2 Users Stories</H1>
+    <B>Christophe Thibaut</B> 
+    <A HREF="mailto:xpdojo-users%40lists.berlios.de?Subject=Re%3A%20%5BXpdojo-users%5D%202%20Users%20Stories&In-Reply-To=%3C4287CC47.2050509%40club-internet.fr%3E"
+       TITLE="[Xpdojo-users] 2 Users Stories">christophe-thibaut at club-internet.fr
+       </A><BR>
+    <I>Mon May 16 00:25:11 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000003.html">[Xpdojo-users] Testing 1,2,3
+</A></li>
+        <LI>Next message: <A HREF="000005.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ok, now the list seems to work (or I seem to be able using it)..
+
+Hello XpDojo Developers,
+
+I've been using xpdojo for more than 3 weeks now. It's a very 
+interesting experience. My programming activities in Erlang were already 
+following a relatively easy process :
+- editing then saving code with emacs
+- launching compilation with make:all() (or hitting twice the up arrow 
+key within command history) on erl
+- executing tests on erl (idem)
+
+and now it's simpler :
+- editing then saving code with emacs
+- launch xpdojo:test_fuiles(&quot;.&quot;) (or one up arrow key)
+
+and I think it will be even simpler when I can merely save my files in 
+the editor and just have a look at the tests results in erl, having the 
+tests automatically executed when I save the source code.
+
+As an Erlang beginner, and writing code for TDD/Erlang beginners, I find 
+it particulary interesting that the process of compiling, finding and 
+executing the test functions need not to be known and seen, making work 
+faster, in a more flexible way, and setting up the developer early in a 
+minimal methodologic frame (code, unit tests, acceptance tests). What I 
+mean is this : when I learned how to program in C, all I needed was an 
+editor, a compiler and a linker. I could just start, printf(&quot;hello 
+world&quot;) and that was that. Regarding the methodology howtos, there was 
+absolutely nothing in these tools that could guide me through an even 
+minimal validation process (how will I state my intentions, how will I 
+know the program is valid, etc.) With xpdojo, right from the start, when 
+typing my first program in Erlang, I'm invited to write an acceptance 
+test, then write an unit test and then start the coding cycle. It like 
+it because while it's a real &quot;anti-hacking&quot; (or fiddling) strategy wired 
+in the tool, it doesn't impose a great burden on the apprentice. 
+Remember the introductory sermon about software quality you have to bear 
+in *any* text about Ada language ? It's like they'd say : you can learn 
+how to create correct sentences in Ada, but there's much more to it. 
+Here, there's nothing to it : you can learn some Erlang, and at the same 
+time you can write your first tests.
+
+In answer, Dominic, to your invitation to participate in xpdojo as an XP 
+customer (sort of, since I certainly won't pretend to set up &quot;business 
+priorities&quot; of course), I submit the following two users stories. The 
+first one describes the supplementary level of confort I'd like to have 
+as an xpdojo user. I tried to hack an auto report process with 
+testing_server, but I'll leave it to you, finally, I think I'm not yet 
+that good ;-). I might be wrong, but I think a lot of the code written 
+in xpdojo as of today just answers to this user story.
+
+The 2d story allows one to choose other name conventions for test 
+modules and test functions, different from the default set up in 
+xpdojo.erl, and allows doing this from the outset of the project, i.e. 
+without having to explicitely provide theses options in Erlang code :
+   [{unit_modules_filter, adlib:ends_with(&quot;ut&quot;)},
+     {unit_functions_filter, adlib:ends_with(&quot;test&quot;)} ...]
+
+My intention is to create soon some acceptance tests for these two 
+stories; of course before that I'm willing to revise them according to 
+our discussions. Feedback welcome !
+
+Regards
+Christophe Thibaut.
+
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: continuously_testing.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050516/97ab98f1/attachment.txt">https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050516/97ab98f1/attachment.txt</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: project_options.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050516/97ab98f1/attachment-0001.txt">https://lists.berlios.de/pipermail/xpdojo-users/attachments/20050516/97ab98f1/attachment-0001.txt</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000003.html">[Xpdojo-users] Testing 1,2,3
+</A></li>
+	<LI>Next message: <A HREF="000005.html">[Xpdojo-users] 2 Users Stories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/xpdojo-users">More information about the Xpdojo-users
+mailing list</a><br>
+</body></html>
